@@ -73,8 +73,12 @@ class _EventEditPageState extends State<EventEditPage> {
 
   @override
   Widget build(BuildContext context) {
+    Color darkGrey = Color(0xFFA9A9A9);
+    Color lightGrey = Color(0xFFD9D9D9);
     return Scaffold(
+      backgroundColor: lightGrey,
       appBar: AppBar(
+        backgroundColor: lightGrey,
         title: Text(widget.eventIndex == null ? 'Add Event' : 'Edit Event'),
       ),
       body: SingleChildScrollView(
@@ -83,7 +87,21 @@ class _EventEditPageState extends State<EventEditPage> {
           children: <Widget>[
             TextFormField(
               controller: _titleController,
-              decoration: InputDecoration(labelText: 'Title'),
+              decoration: InputDecoration(
+                labelText: 'Title',
+                labelStyle: TextStyle(fontSize: 20, ),
+                fillColor: Colors.grey[200], // Color for the fill of the input field
+                filled: true, // Enable the fill color
+                border: OutlineInputBorder( // Creates a border around the input field
+                  borderRadius: BorderRadius.circular(8), // Rounded corners
+                  borderSide: BorderSide.none, // No border side
+                ),
+                // Optional: Enhance focus with a different border style
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.black, width: 2),
+                ),
+              ),
             ),
             ListTile(
               title: Text('Date: ${DateFormat.yMd().format(_selectedDate)}'),
@@ -119,7 +137,21 @@ class _EventEditPageState extends State<EventEditPage> {
             ),
             TextFormField(
               controller: _detailController,
-              decoration: InputDecoration(labelText: 'Details'),
+              decoration: InputDecoration(
+                labelText: 'Details',
+                labelStyle: TextStyle(fontSize: 20, ),
+                fillColor: Colors.grey[200], // Color for the fill of the input field
+                filled: true, // Enable the fill color
+                border: OutlineInputBorder( // Creates a border around the input field
+                  borderRadius: BorderRadius.circular(8), // Rounded corners
+                  borderSide: BorderSide.none, // No border side
+                ),
+                // Optional: Enhance focus with a different border style
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.black, width: 2),
+                ),
+              ),
               maxLines: 5,
             ),
             ElevatedButton(

@@ -7,15 +7,15 @@ class EventDAO {
   EventDAO(this.eventBox);
 
   void addEvent(Event event) {
-    eventBox.add(event); // Hive automatically assigns a unique key
+    eventBox.add(event);
   }
 
   void editEvent(int key, Event updatedEvent) {
-    eventBox.put(key, updatedEvent); // Update the event at the specified key
+    eventBox.put(key, updatedEvent);
   }
 
   void deleteEvent(int key) {
-    eventBox.delete(key); // Delete the event with the specified key
+    eventBox.delete(key);
   }
 
 }
